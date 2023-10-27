@@ -8,19 +8,21 @@ int main()
     int input = 0;
     cin >> input;
 
-    int i = 2;
+    int divisorCount = 0;
     bool primeNumber = true;
 
-    if (input >= 0)
+    if (input > 1)
     {
-        // 0 1 2 3 prime numbers
-        while (primeNumber && (i != input - 1) && input > 3)
+        for (int i = 1; i <= input; i++)
         {
             if (input % i == 0)
             {
-                primeNumber = false;
+                divisorCount++;
+                if (divisorCount > 2)
+                {
+                    primeNumber = false;
+                }
             }
-            i++;
         }
     }
     else
